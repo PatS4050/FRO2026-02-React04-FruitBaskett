@@ -10,7 +10,7 @@ export let fruits = [
     },
     {
         type: 'Appels',
-        sourceImage: '',
+        sourceImage: '&#1F34F',
     },
     {
         type: 'Kiwis',
