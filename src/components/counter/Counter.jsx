@@ -18,7 +18,7 @@ const countDecrement = () => {
 // function Counter() {
     return (
         <button onClick={countDecrement}>-</button>
-    <p>{counter}</p>
+    <span>{counter}</span>
     <button onClick={countIncrement}>+</button>
 )}
 
