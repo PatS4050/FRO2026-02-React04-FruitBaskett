@@ -3,6 +3,7 @@ import './App.css'
 import {fruits} from "./constants/inventory.js";
 import {typeProducts, imageProducts} from "./components/informationProducts/informationProducts.jsx";
 // import Counter from "./components/counter/Counter.jsx";
+import headerImage from "./assets/screenshot-logo.png"
 
 function App() {
     // const [fruit, setfruit] = react.useState ("")
@@ -28,10 +29,14 @@ function App() {
     const [remarksValue, setRemarksValue] = useState('')
     const [termsValue, setTermsValue] = useState(false)
 
+    function logClick() {
+        console.log(`aantal bestellingen ${setCounter}`)
+    }
 
     return (
         <>
             <h1>Fruitmand bezorgservice</h1>
+            <img src={headerImage} alt="fruitmand-bord" />
             <div>
                 {fruits.map((diffFruits) => {
                     return <article>
@@ -157,7 +162,7 @@ function App() {
                         id="confirmationTerms"
                     />
                     </label>
-                    <button type="submit" id="submit" name="submit">verzenden</button>
+                    <button type="button" id="submit" name="submit" onClick={logClick}>verzenden</button>
 
                 </form>
             </div>
