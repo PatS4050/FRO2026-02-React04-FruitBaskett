@@ -21,6 +21,23 @@ ol, ul {
 }
 div {
     padding:90px;
+    display: flex;
+    flex-direction: column;
+
+}
+/*/////// 3. Products //////////////////////////////////////////*/
+
+article {
+    border: 2px solid darkgrey;
+    border-radius: 3px;
+    padding: 18px;
+    margin: 3px;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+    gap:12px;
+
 }
 /*/////// 4. Forms /////////////////////////////////////////////*/
 form {

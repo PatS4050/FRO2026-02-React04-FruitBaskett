@@ -17,14 +17,6 @@ function App() {
     const countReset = () => (setCounter(0))
     // const countDecrement = {counter > 0 ? () => {setCounter(prevCount => prevCount - 1)} : 0};
 
-    // function nameProducts(diffFruits) {
-    //     const nameProduct = diffFruits.type
-    //     return nameProduct.map
-        // let nameProducts = ""
-        // for(let i = 0 ; i < diffFruits.length; i++)
-        //     nameProducts+= diffFruits[i].type;
-    // }
-
     // Hier komen de formulier gegevens //
     const [nameValue, setNameValue] = useState('')
     const [surnameValue, setSurnameValue] = useState('')
@@ -42,34 +34,34 @@ function App() {
             <div>
                 {fruits.map((diffFruits) => {
                     return <article>
-                        <p>{imageProducts(diffFruits)} {typeProducts(diffFruits)}
-                            <button onClick={countDecrement}>-</button>
-                            <span>{counter}</span>
-                            <button onClick={countIncrement}>+</button>
-                        </p>
-                    </article>
-                })}
-                <article>
-                    <p>&#127827;{(fruits[0].type)}
+                        <p>{imageProducts(diffFruits)}</p>
+                        <p>{typeProducts(diffFruits)}</p>
                         <button onClick={countDecrement}>-</button>
                         <span>{counter}</span>
                         <button onClick={countIncrement}>+</button>
-                    </p>
+                    </article>
+                })}
+                <article>
+                    <p>&#127827;</p><p>{(fruits[0].type)}</p>
+                    <button onClick={countDecrement}>-</button>
+                    <span>{counter}</span>
+                    <button onClick={countIncrement}>+</button>
+
                 </article>
 
-            <article>
-                <p>&#x1F34C;{(fruits[1].type)}
+                <article>
+                    <p>&#x1F34C;</p><p>{(fruits[1].type)}
                 </p>
-            </article>
-            <article>
-                <p>&#x1F34F;{(fruits[2].type)}</p>
-            </article>
-            <article>
-                <p>&#x1F95D;{(fruits[3].type)}</p>
-            </article>
-            <section>
-                <button type="reset" id="reset" name="reset" onClick={countReset}>reset</button>
-            </section>
+                </article>
+                <article>
+                    <p>&#x1F34F;</p><p>{(fruits[2].type)}</p>
+                </article>
+                <article>
+                    <p>&#x1F95D;</p><p>{(fruits[3].type)}</p>
+                </article>
+                <section>
+                    <button type="reset" id="reset" name="reset" onClick={countReset}>reset</button>
+                </section>
             </div>
             <div>
                 <form>
@@ -129,18 +121,16 @@ function App() {
                         <input
                             type="radio"
                             name="daytime"
-                            checked={daytimeValue}
-                            onChange={(e) => setDaytimeValue(e.target.value)}
+                            // checked={daytimeValue}
+                            // onChange={(e) => setDaytimeValue(e.target.value)}
                             id="daytime"
                         /> Overdag
-                    </label>
-                    <label htmlFor="daytime">
                     <input
                         type="radio"
                         name="daytime"
                         id="daytime"
-                        checked={daytimeValue}
-                        onChange={(e) => setDaytimeValue(e.target.value)}
+                        // checked={daytimeValue}
+                        // onChange={(e) => setDaytimeValue(e.target.value)}
                     /> 's Avonds
                 </label>
                     </span>

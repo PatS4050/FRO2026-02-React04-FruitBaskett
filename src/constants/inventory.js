@@ -2,7 +2,7 @@
 export let fruits = [
     {
         type: "Aardbeien",
-        sourceImage: "#127827",
+        sourceImage: "&#127827",
     },
     {
         type: "Bananen",
