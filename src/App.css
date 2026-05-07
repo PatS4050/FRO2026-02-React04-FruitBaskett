@@ -1,0 +1,33 @@
+/*////////////////////////////////////////////////////////////////////////
+Table of Contents:
+    1. Global Styles
+    2. Typografie
+    3. Products
+    4. Forms
+    5. Media Queries
+////////////////////////////////////////////////////////////////////////*/
+
+/*////////////////////////
+    1. Global Styles
+////////////////////////*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ol, ul {
+    list-style: none;
+}
+div {
+    padding:90px;
+}
+/*/////// 4. Forms /////////////////////////////////////////////*/
+form {
+    border 2px dashed red;
+    display: flex;
+    flex-direction: column;
+    justify-items: start;
+    align-items: left;
+    gap:9px;
+}

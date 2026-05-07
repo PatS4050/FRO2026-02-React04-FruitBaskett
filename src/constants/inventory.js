@@ -1,19 +1,19 @@
 // Alle producten uit de winkel //
 export let fruits = [
     {
-        type: 'Aardbeien',
-        sourceImage: '',
+        type: "Aardbeien",
+        sourceImage: "#127827",
     },
     {
-        type: 'Bananen',
-        sourceImage: '',
+        type: "Bananen",
+        sourceImage: "#x1F34C",
     },
     {
-        type: 'Appels',
-        sourceImage: '&#1F34F',
+        type: "Appels",
+        sourceImage: "#x1F34F",
     },
     {
-        type: 'Kiwis',
-        sourceImage: '',
+        type: "Kiwi's",
+        sourceImage: "#x1F95D",
     },
 ];

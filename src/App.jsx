@@ -1,6 +1,7 @@
 import react, {useState} from "react";
 import './App.css'
 import {fruits} from "./constants/inventory.js";
+import {typeProducts, imageProducts} from "./components/informationProducts/informationProducts.jsx";
 
 function App() {
     // const [fruit, setfruit] = react.useState ("")
@@ -16,100 +17,158 @@ function App() {
     const countReset = () => (setCounter(0))
     // const countDecrement = {counter > 0 ? () => {setCounter(prevCount => prevCount - 1)} : 0};
 
+    // function nameProducts(diffFruits) {
+    //     const nameProduct = diffFruits.type
+    //     return nameProduct.map
+        // let nameProducts = ""
+        // for(let i = 0 ; i < diffFruits.length; i++)
+        //     nameProducts+= diffFruits[i].type;
+    // }
+
+    // Hier komen de formulier gegevens //
+    const [nameValue, setNameValue] = useState('')
+    const [surnameValue, setSurnameValue] = useState('')
+    const [ageValue, setAgeValue] = useState(0)
+    const [zipcodeValue, setZipcodeValue] = useState('')
+    const [deliveryValue, setDeliveryValue] = useState('week')
+    const [daytimeValue, setDaytimeValue] = useState('')
+    const [remarksValue, setRemarksValue] = useState('')
+    const [termsValue, setTermsValue] = useState(false)
+
+
     return (
         <>
             <h1>Fruitmand bezorgservice</h1>
-            <article>
-                <p>&#127827;{(fruits[0].type)}
-                    <button onClick={countDecrement}>-</button>
-                    <span>{counter}</span>
-                    <button onClick={countIncrement}>+</button>
-                </p>
-            </article>
+            <div>
+                {fruits.map((diffFruits) => {
+                    return <article>
+                        <p>{imageProducts(diffFruits)} {typeProducts(diffFruits)}
+                            <button onClick={countDecrement}>-</button>
+                            <span>{counter}</span>
+                            <button onClick={countIncrement}>+</button>
+                        </p>
+                    </article>
+                })}
+                <article>
+                    <p>&#127827;{(fruits[0].type)}
+                        <button onClick={countDecrement}>-</button>
+                        <span>{counter}</span>
+                        <button onClick={countIncrement}>+</button>
+                    </p>
+                </article>
+
             <article>
                 <p>&#x1F34C;{(fruits[1].type)}
                 </p>
             </article>
-            <srticle>
+            <article>
                 <p>&#x1F34F;{(fruits[2].type)}</p>
-            </srticle>
+            </article>
             <article>
                 <p>&#x1F95D;{(fruits[3].type)}</p>
             </article>
             <section>
                 <button type="reset" id="reset" name="reset" onClick={countReset}>reset</button>
             </section>
-            <form>
-                <div>
+            </div>
+            <div>
+                <form>
                     <label htmlFor="name-field">
-                        Voornaam:<input
+                        Voornaam <input
                         type="text"
+                        value={nameValue}
+                        onChange={(e) => setNameValue(e.target.value)}
                         name="name"
                         id="name-field"
                         placeholder="voornaam"
                     />
                     </label>
                     <label htmlFor="surName-field">
-                        Achternaam:<input
+                        Achternaam <input
                         type="text"
                         name="surname"
+                        value={surnameValue}
+                        onChange={(e) => setSurnameValue(e.target.value)}
                         id="surName-field"
                         placeholder="achternaam"
                     />
                     </label>
                     <label htmlFor="age">
-                        Leeftijd:<input
-                        type="text"
+                        Leeftijd <input
+                        type="number"
                         name="age"
+                        value={ageValue}
+                        onChange={(e) => setAgeValue(e.target.value)}
                         id="age"
                         placeholder="0"
                     />
                     </label>
                     <label htmlFor="zipCode">
-                        Postcode:<input
+                        Postcode <input
                         type="text"
                         name="zipcode"
+                        value={zipcodeValue}
+                        onChange={(e) => setZipcodeValue(e.target.value)}
                         id="zipCode"
                         placeholder="zipcode"
                     />
                     </label>
                     <label htmlFor="delivery">
-                        Bezorgfrequentie:<select
+                        Bezorgfrequentie <select
                         name="delivery"
+                        value={deliveryValue}
+                        onChange={(e) => setDeliveryValue(e.target.value)}
                         id="delivery">
                         <option value="week">iedere week</option>
                         <option value="2weekly">om de week</option>
                         <option value="monthly">elke maand</option>
                     </select>
                     </label>
+                    <span>
                     <label htmlFor="daytime">
                         <input
-                        type="radio"
-                        name="daytime"
-                        id="daytime"
-                        value="day"
-                    />Overdag
-                    </label><label htmlFor="daytime">
+                            type="radio"
+                            name="daytime"
+                            checked={daytimeValue}
+                            onChange={(e) => setDaytimeValue(e.target.value)}
+                            id="daytime"
+                        /> Overdag
+                    </label>
+                    <label htmlFor="daytime">
                     <input
                         type="radio"
                         name="daytime"
                         id="daytime"
-                        value="evening"
-                    />'s Avonds
+                        checked={daytimeValue}
+                        onChange={(e) => setDaytimeValue(e.target.value)}
+                    /> 's Avonds
                 </label>
+                    </span>
                     <label htmlFor="remarks">
-                        Opmerking:<input
-                        type="text-box"
+                    <textarea
+                        type="text"
                         name="remarks"
+                        value={remarksValue}
+                        onChange={(e) => setRemarksValue(e.target.value)}
                         id="remarks"
                         placeholder="opmerkingen"
+                        rows={4}
+                        cols={40}
                     />
                     </label>
+                    <label htmlFor="confirmationTerms">
+                        Akkoord met de voorwaarden:<input
+                        type="checkbox"
+                        value={termsValue}
+                        onChange={(e) => setTermsValue(e.target.value)}
+                        name="terms"
+                        id="confirmationTerms"
+                    />
+                    </label>
+                    <button type="submit" id="submit" name="submit">verzenden</button>
 
-
-
-                </div>
-            </form>
+                </form>
+            </div>
         </>
     )
 }
