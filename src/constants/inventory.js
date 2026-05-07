@@ -6,7 +6,7 @@ export let fruits = [
     },
     {
         type: "Bananen",
-        sourceImage: "#x1F34C",
+        sourceImage: "&#x1F34C;",
     },
     {
         type: "Appels",

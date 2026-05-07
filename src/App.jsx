@@ -2,6 +2,7 @@ import react, {useState} from "react";
 import './App.css'
 import {fruits} from "./constants/inventory.js";
 import {typeProducts, imageProducts} from "./components/informationProducts/informationProducts.jsx";
+// import Counter from "./components/counter/Counter.jsx";
 
 function App() {
     // const [fruit, setfruit] = react.useState ("")
@@ -36,6 +37,7 @@ function App() {
                     return <article>
                         <p>{imageProducts(diffFruits)}</p>
                         <p>{typeProducts(diffFruits)}</p>
+                        {/*<Counter />*/}
                         <button onClick={countDecrement}>-</button>
                         <span>{counter}</span>
                         <button onClick={countIncrement}>+</button>
