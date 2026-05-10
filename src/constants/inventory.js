@@ -2,18 +2,22 @@
 export let fruits = [
     {
         type: "Aardbeien",
-        sourceImage: "&#127827",
+        sourceImage: "🍓",
+        counter: 0,
     },
     {
         type: "Bananen",
-        sourceImage: "&#x1F34C;",
+        sourceImage: "🍌",
+        counter: 0,
     },
     {
         type: "Appels",
-        sourceImage: "#x1F34F",
+        sourceImage: "🍏",
+        counter: 0,
     },
     {
         type: "Kiwi's",
-        sourceImage: "#x1F95D",
+        sourceImage: "🥝",
+        counter: 0,
     },
 ];

@@ -8,3 +8,7 @@ export function imageProducts(tomato) {
     const imageProduct = tomato.sourceImage
     return imageProduct
 }
+export function countProducts(tomato) {
+    const countProduct = tomato.count
+    return countProduct
+}

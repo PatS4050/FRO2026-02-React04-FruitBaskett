@@ -48,24 +48,6 @@ function App() {
                         <button onClick={countIncrement}>+</button>
                     </article>
                 })}
-                <article>
-                    <p>&#127827;</p><p>{(fruits[0].type)}</p>
-                    <button onClick={countDecrement}>-</button>
-                    <span>{counter}</span>
-                    <button onClick={countIncrement}>+</button>
-
-                </article>
-
-                <article>
-                    <p>&#x1F34C;</p><p>{(fruits[1].type)}
-                </p>
-                </article>
-                <article>
-                    <p>&#x1F34F;</p><p>{(fruits[2].type)}</p>
-                </article>
-                <article>
-                    <p>&#x1F95D;</p><p>{(fruits[3].type)}</p>
-                </article>
                 <section>
                     <button type="reset" id="reset" name="reset" onClick={countReset}>reset</button>
                 </section>
