@@ -2,11 +2,12 @@ import react, {useState} from "react";
 import './App.css'
 import {fruits} from "./constants/inventory.js";
 import {typeProducts, imageProducts} from "./components/informationProducts/informationProducts.jsx";
-// import Counter from "./components/counter/Counter.jsx";
+import {Counter, CounterUp} from "./components/counter/Counter.jsx";
 import headerImage from "./assets/screenshot-logo.png"
 
 function App() {
     // const [fruit, setfruit] = react.useState ("")
+
     const [counter, setCounter] = useState(0);
     const countIncrement = () => {
         setCounter(prevCount => prevCount + 1)
@@ -28,7 +29,8 @@ function App() {
     const [daytimeValue, setDaytimeValue] = useState('')
     const [remarksValue, setRemarksValue] = useState('')
     const [termsValue, setTermsValue] = useState(false)
-
+    const [formState,setFormState] = useState({firstname: "",
+    });
     function logClick() {
         console.log(`aantal bestellingen ${setCounter}`)
     }
@@ -42,7 +44,8 @@ function App() {
                     return <article>
                         <p>{imageProducts(diffFruits)}</p>
                         <p>{typeProducts(diffFruits)}</p>
-                        {/*<Counter />*/}
+                        <Counter />
+                        <CounterUp />
                         <button onClick={countDecrement}>-</button>
                         <span>{counter}</span>
                         <button onClick={countIncrement}>+</button>

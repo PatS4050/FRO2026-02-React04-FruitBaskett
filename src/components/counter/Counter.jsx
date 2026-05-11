@@ -1,25 +1,50 @@
 import React, {useState} from "react";
-import "./components/counter/Counter.css";
+import "./Counter.css";
 
 //Counter.jsx//
-function Counter() {
+export function  Counter() {
 
-const [counter, setCounter] = useState(0);
-const countIncrement = () => {
-    setCounter(prevCount => prevCount + 1)
-};
-const countDecrement = () => {
-    if (counter > 0) {
-        setCounter(prevCount => prevCount - 1)
+    const [counter, setCounter] = useState(0);
+    const countIncrement = () => {
+        setCounter(prevCount => prevCount + 1)
+    };
+    const countDecrement = () => {
+        if (counter > 0) {
+            setCounter(prevCount => prevCount - 1)
+        }
+    };
+    const countReset = () => (setCounter(0))
+
+// function Counter() {
+        return (
+            //     <button onClick={countDecrement}>-</button>
+            <span>{counter}</span>
+            // <button onClick={countIncrement}>+</button>
+        )
     }
-    // const countDecrement = {counter > 0 ? () => {setCounter(prevCount => prevCount - 1)} : 0};
-};
+
+export function  CounterUp() {
+
+    const [counter, setCounter] = useState(0);
+    const countIncrement = () => {
+        setCounter(prevCount => prevCount + 1)
+    };
+    const countDecrement = () => {
+        if (counter > 0) {
+            setCounter(prevCount => prevCount - 1)
+        }
+    };
+    const countReset = () => (setCounter(0))
 
 // function Counter() {
     return (
-        <button onClick={countDecrement}>-</button>
-    <span>{counter}</span>
-    <button onClick={countIncrement}>+</button>
-)}
+        //     <button onClick={countDecrement}>-</button>
+        // <span>{counter}</span>
+        <button onClick={countIncrement}>+</button>
+    )
+}
+//     return (
+//         <span>testCounter</span>
+//     );
+// }
 
-export default Counter;
